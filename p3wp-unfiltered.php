@@ -3,6 +3,7 @@
 Plugin Name: P3 Unfiltered HTML
 Plugin URI: http://planet3.org
 Version 1.0
+Description: Adds the <code>unfiltered_html</code> capablitiy to Administrators and Editors so that content posted by users with those roles is not filtered by KSES; Embeds, Iframe, etc. are preserved. <strong>Note</strong>: If for any reason the <code>unfiltered_html</code> capability is ever lost, simply deactivate, and then reactivate this plugin.
 Author: Dan Moutal
 Author URI: http://ofdan.ca
 License: GPLv2
@@ -24,7 +25,6 @@ function p3_unfilter_roles() {
 
     global $wp_roles;
     // Dont use get_role() wrapper, it doesn't work as a one off.
-    // (get_role does not properly return as reference)
     $wp_roles->role_objects['administrator']->add_cap( 'unfiltered_html' );
     $wp_roles->role_objects['editor']->add_cap( 'unfiltered_html' );
 }
