@@ -52,5 +52,3 @@ function p3_unfilter_multisite( $caps, $cap, $user_id, $args ) {
     return $caps;
 }
 add_filter( 'map_meta_cap', 'p3_unfilter_multisite', 10, 4 );
-
-}
